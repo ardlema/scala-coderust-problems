@@ -32,6 +32,23 @@ class AwesomeLinkedListTests
       linkedListWithoutElement.get(3) should equal (Some(5))
       linkedListWithoutElement.get(4) should equal (None)
     }
+
+    it("should be able to remove duplicate elements"){
+      val linkedListToBeModified = mutable.LinkedList(1,2,3,4,2,1,5,4,6,7,8,4,7)
+
+      val linkedListWithoutDuplicateElements = AwesomeLinkedList(linkedListToBeModified).removeDuplicatesFromList()
+
+      linkedListWithoutDuplicateElements.size should equal(8)
+      linkedListWithoutDuplicateElements.get(0) should equal (Some(1))
+      linkedListWithoutDuplicateElements.get(1) should equal (Some(2))
+      linkedListWithoutDuplicateElements.get(2) should equal (Some(3))
+      linkedListWithoutDuplicateElements.get(3) should equal (Some(4))
+      linkedListWithoutDuplicateElements.get(4) should equal (Some(5))
+      linkedListWithoutDuplicateElements.get(5) should equal (Some(6))
+      linkedListWithoutDuplicateElements.get(6) should equal (Some(7))
+      linkedListWithoutDuplicateElements.get(7) should equal (Some(8))
+      linkedListWithoutDuplicateElements.get(8) should equal (None)
+    }
   }
 }
 
